@@ -23,10 +23,6 @@ document.write
 ('<h3>' + greeting + '</h3>');
 
 function sayHello(teste){
-    window.alert("Testando" + teste);
+    window.alert("Testando " + teste);
     
-}
-
-function helloInHTML(name){
-    document.getElementById("result");
 }
