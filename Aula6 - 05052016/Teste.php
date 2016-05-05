@@ -14,24 +14,34 @@
 class Teste {
     //put your code here
     // atributos
-    var $atributo1;
-    var $atributo2;
+    public $atributo1;
+    private $atributo2;
     
     //metodos
+    function __construct($attr1, $attr2) {
+        $this->atributo1 = $attr1;
+        $this->atributo2 = $attr2;
+    }
+            
     function get_attr1 () {
-        echo "Atributo 1 " . $this->atributo1 ."</br>";
+        echo $this->atributo1 . "</br>";
+    }
+    
+    function get_attr2 () {
+        echo $this->atributo2 . "</br>";
     }
     
     function set_attr1 ($atributo) {
         $this->atributo1 = $atributo;
     }
+    
+    function set_attr2 ($attr2) {
+        $this->atributo2 = $attr2;
+    }
+    
+    function result () {
+        echo $this->atributo1 * $this->atributo2 . "</br>";
+    }
 }
 
 
-$teste = new Teste();
-$teste->atributo1="IFSP";
-$teste->get_attr1();
-
-
-$teste->set_attr1(hortolandia);
-$teste->get_attr1();
