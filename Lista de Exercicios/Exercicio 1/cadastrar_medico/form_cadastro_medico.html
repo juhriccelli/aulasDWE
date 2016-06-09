@@ -1,0 +1,30 @@
+<?php
+  require_once('../bd/conexao.php');
+  $query = mysql_query("SELECT * FROM especialidade");
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+	  <title>Cadastrar Médico</title>
+	  <meta charset="utf-8">
+  </head>
+  <body>
+		<form action="cadastrar_medico.php" method="post">
+		  ID: <input type="number" name="id_medico" />
+			<br />
+			Nome: <input type="text" name="nome_medico" />
+			<br />
+			CRM: <input type="number" name="crm" />
+			<br />			
+			Selecione uma Especialidade
+			  <select>
+			    <option>Especialidades</option>
+			    <?php while($especialidade = mysql_fetch_array($query)) { ?>
+			    <option value="<?php echo $especialidade['id_especialidade'] ?>"><?php echo $especialidade['descricao'] ?></option>
+			    <?php } ?>
+			  </select>
+			<input type="submit" value="Cadastrar" />
+		</form>
+  </body>
+</html>
