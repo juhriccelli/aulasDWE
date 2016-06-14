@@ -13,11 +13,11 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/aulasdwe/Lista de Exercicios/Exercicio 1/index.php">Home</a></li>
-                    <li><a href="/aulasdwe/Lista de Exercicios/Exercicio 1//medico/form_cadastro_medico.php">Cadastro Médico</a></li>
-                    <li><a href="/aulasdwe/Lista de Exercicios/Exercicio 1/paciente/form_cadastro_paciente.php">Cadastrar Paciente</a></li>
-                    <li><a href="/aulasdwe/Lista de Exercicios/Exercicio 1/medico/listar_medicos.php">Listar Médico</a></li>
-                    <li><a href="/aulasdwe/Lista de Exercicios/Exercicio 1/paciente/listar_pacientes.php">Listar Paciente</a></li>
+                    <li class="active"><a href="/aulasdwe/Lista/Hospital/index.php">Home</a></li>
+                    <li><a href="/aulasdwe/Lista/Hospital/medico/form_cadastro_medico.php">Cadastro Médico</a></li>
+                    <li><a href="/aulasdwe/Lista/Hospital/paciente/form_cadastro_paciente.php">Cadastrar Paciente</a></li>
+                    <li><a href="/aulasdwe/Lista/Hospital/medico/listar_medicos.php">Listar Médico</a></li>
+                    <li><a href="/aulasdwe/Lista/Hospital/paciente/listar_pacientes.php">Listar Paciente</a></li>
                 </ul>
             </div>
         </nav>
