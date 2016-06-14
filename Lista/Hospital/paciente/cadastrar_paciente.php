@@ -19,3 +19,7 @@
 		);
 
 	$sth->execute($vetor);
+        
+        
+    include("../Testes/validaCPF.php");
+

@@ -1,3 +1,5 @@
+<?php
+
 function validaCPF($cpf = null) {
  
     // Verifica se um número foi informado
