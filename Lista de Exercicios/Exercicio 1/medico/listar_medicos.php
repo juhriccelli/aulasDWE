@@ -1,62 +1,40 @@
 <?php
-require_once('../bd/conexao.php');
-$sql = 'SELECT * 
+	require_once('../bd/conexao.php');
+	$sql = 'SELECT * 
           FROM medico        m
              , especialidade e
           WHERE m.id_especialidade = e.id_especialidade';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Listar Médicos</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../estilos.css" type="text/css"></link>
-    <body>
-        <table class="table table-striped">
-            <thead>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>CRM</th>
-            <th>Especialidade</th>
-        </thead>
-        <tbody>
-            <?php foreach ($dbh->query($sql) as $linha): ?>
-                <tr>
-                    <td><?php echo $linha['id_medico'] ?></td>
-                    <td><?php echo $linha['nome'] ?></td>
-                    <td><?php echo $linha['crm'] ?></td>
-                    <td><?php echo $linha['descricao'] ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</body>
-
-<script>
-    function f_gerar() {
-        var n1 = document.getElementById("n1").value;
-        var n2 = document.getElementById("n2").value;
-
-        n1 = parseInt(n1);
-        n2 = parseInt(n2);
-
-        var snumeros = "";
-        for (var i = n1; i <= n2; i++) {
-            snumeros += i;
-            snumeros += "<br />";
-        }
-
-        var resultado = document.getElementById("resultado");
-        resultado.innerHTML = snumeros;
-    }
-</script>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-    <input type="number" name="n1" id="n1" />
-    <input type="number" name="n2" id="n2" />
-    <button onclick="f_gerar()">Gerar</button>
-    <div id="resultado"></div>
+	<table class="table table-striped">
+		<thead>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>CRM</th>
+			<th>Especialidade</th>
+		</thead>
+		<tbody>
+		<?php foreach($dbh->query($sql) as $linha): ?>
+			<tr>
+				<td><?php echo $linha['id_medico']?></td>
+				<td><?php echo $linha['nome']?></td>
+				<td><?php echo $linha['crm']?></td>
+				<td><?php echo $linha['descricao']?></td>
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
 </body>
-</html>
-
 </html>
