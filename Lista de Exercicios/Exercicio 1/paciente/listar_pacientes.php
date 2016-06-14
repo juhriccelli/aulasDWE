@@ -1,5 +1,6 @@
 <?php
 	require_once('../bd/conexao.php');
+        require_once('../navBar.php');
 
 //	$sql = 'SELECT * FROM paciente_view';
 
