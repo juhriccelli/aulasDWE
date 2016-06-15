@@ -4,17 +4,19 @@ require_once('../navBar.php');
 
 //	$sql = 'SELECT * FROM paciente_view';
 
-$sql = 'SELECT id_paciente
-               , nome
-               , cpf
-               , data_nascimento
+$sql = 'SELECT p.id_paciente
+               , p.nome
+               , p.cpf
+               , p.data_nascimento
                , CASE
                    WHEN sexo = \'M\'
                      THEN \'Masculino\'
                    ELSE
                      \'Feminino\'
                  END sexo
-            FROM paciente';
+                 , m.nome AS medico
+            FROM paciente p, medico m, paciente_medico pm
+            where pm.id_medico = m.id_medico AND pm.id_paciente = p.id_paciente';
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,6 +39,7 @@ $sql = 'SELECT id_paciente
                 <th>CPF</th>
                 <th>Data Nascimento</th>
                 <th>Sexo</th>
+                <th>Atendido por</th>
                 </thead>
                 <tbody>
                     <?php foreach ($dbh->query($sql) as $linha): ?>
@@ -46,6 +49,7 @@ $sql = 'SELECT id_paciente
                             <td><?php echo $linha['cpf'] ?></td>
                             <td><?php echo $linha['data_nascimento'] ?></td>
                             <td><?php echo $linha['sexo'] ?></td>
+                            <td><?php echo $linha['medico'] ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
