@@ -27,7 +27,7 @@ require_once('../navBar.php');
                     <input type="text" name="nome" id="nome" class="form-control" required />
                 </div>			
                 <div class="form-group">
-                    <label for="cpf">CPF</label>
+                    <label for="cpf">CPF</label> 
                     <input type="text" name="cpf" id="cpf" class="form-control" required />
                 </div>
                 <div class="form-group">
